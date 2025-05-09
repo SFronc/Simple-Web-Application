@@ -1,0 +1,22 @@
+@model Note 
+
+<h1>@Model.title</h1>
+
+
+<div class="product-item">
+    <p>@Model.data</p>
+</div>
+
+
+<form asp-action="UpdateNote" method="post">
+    <div class="form-group"></div>
+        <label for="notetext">Text:</label>
+        <input type="notetext" id="notetext" name="notetext" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+<form asp-action="DeleteNote" method="post">
+<button type="submit" class="btn btn-primary">Delete</button>
+</form>
+

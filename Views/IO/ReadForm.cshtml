@@ -1,0 +1,16 @@
+@ViewData["data"]
+
+<form asp-action="ReadForm">
+    <input name="data" id="data" class="form-control" />
+    <input type="submit" value="ReadForm" class="btn btn-primary" />
+</form>
+
+
+@if (Context.Session.GetString("data") != null && Context.Session.GetString("data") == "abc")
+{
+    <div class="alert alert-success">Klucz jest w sesji!</div>
+}
+else
+{
+    <div class="alert alert-warning">Brak klucza w sesji.</div>
+}

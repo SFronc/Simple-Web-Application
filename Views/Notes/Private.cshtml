@@ -1,0 +1,23 @@
+@model IEnumerable<NoteDto> 
+
+<h1>Your private notes</h1>
+
+@foreach (var item in Model)
+{
+    <div class="product-item">
+        <a asp-action="Details" asp-route-id="@item.id">@item.title</a>
+        <p>Last modified: @item.date.ToString()</p>
+    </div>
+}
+
+<form asp-action="AddNote" method="post">
+    <div class="form-group">
+        <label for="notetitle">Title:</label>
+        <input type="notetitle" id="notetitle" name="notetitle" class="form-control" required />
+    </div>
+    <div class="form-group"></div>
+        <label for="notetext">Text:</label>
+        <input type="notetext" id="notetext" name="notetext" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Add note</button>
+</form>
